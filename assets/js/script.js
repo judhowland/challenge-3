@@ -56,11 +56,10 @@ var selectCriteria = function () {
 };
 
 function generateRandom(arr) {
-  var randomIndex = Math.floor(Math.random * arr.length);
+  var randomIndex = Math.floor(Math.random() * arr.length);
   var randomChar = arr[randomIndex];
   return randomChar;
 };
-
 
 function generatePassword() {
   var criteria = selectCriteria();
@@ -96,10 +95,7 @@ function generatePassword() {
   console.log(possibleChars);
 
   for (var i = 0; i < criteria.length; i++) {
-    debugger;
-    var possibleCharsArray = possibleChars.split("");
-    console.log(possibleCharsArray);
-    var possibleCharacters = generateRandom(possibleCharsArray);
+    var possibleCharacters = generateRandom(possibleChars);
     result.push(possibleCharacters);
     console.log(possibleCharacters);
   }
